@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPDB</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">PPDB 2020/2021</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse my-2 my-lg-0" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto mr-sm-2">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">HOME <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="persyaratan.html">PERSYARATAN</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="pendidikan.html">PENDIDIKAN</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="daftar.html">DAFTAR</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">LOGIN</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <img src="img/unnamed.jpg" class="w-100"alt="">
+            </div>
+            <div class="col-md-6">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Nama</label>
+                        <input type="text" class="form-control" id="nama" aria-describedby="emailHelp" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Tanggal Lahir</label>
+                        <input type="date" class="form-control" id="ttl" aria-describedby="emailHelp" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Asal Sekolah</label>
+                        <input type="text" class="form-control" id="asalSekolah" aria-describedby="emailHelp" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlSelect1">Pendidikan</label>
+                        <select class="form-control" id="pendidikan" required>
+                          <option>PAUD</option>
+                          <option>TK</option>
+                          <option>SD</option>
+                          <option>SMP</option>
+                          <option>SMA</option>
+                        </select>
+                      </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Username</label>
+                      <input type="text" class="form-control" id="username" aria-describedby="emailHelp" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input type="password" class="form-control" id="password" required>
+                    </div>
+                    <div class="text-center">
+                        <button type="button" id="btnDaftar" class="btn btn-primary w-100 py-3">Daftar</button>
+                    </div>
+                  </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer py-3 mt-4" style="background-color: #dbdbdb;">
+        <div class="container">
+          <span class="text-muted">Created By Dicky Fajar Darmawan.</span>
+        </div>
+      </footer>
+
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-body text-center">
+                <h4>Daftar Berhasil</h4>
+                <h4>Silahkan Login dengan username dan password yg anda masukkan barusan.</h4>
+            </div>
+            <div class="modal-footer text-center">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+    <script>
+        var btnDaftar = document.getElementById('btnDaftar');
+        var nama = document.getElementById('nama');
+        var ttl = document.getElementById('ttl');
+        var asalSekolah = document.getElementById('asalSekolah');
+        var pendidikan = document.getElementById('pendidikan');
+        var username = document.getElementById('username');
+        var password = document.getElementById('password');
+
+        btnDaftar.addEventListener('click', function() {
+            if (nama.value == "" || 
+            ttl.value == "" ||
+            asalSekolah.value == "" ||
+            pendidikan.value == "" ||
+            username.value == "" ||
+            password.value == "") {
+                alert("form tidak boleh kosong");
+            } else {
+                var siswaData = {
+                    "nama": nama.value,
+                    "ttl": ttl.value,
+                    "asalSekolah": asalSekolah.value,
+                    "pendidikan": pendidikan.value,
+                    "username": username.value,
+                    "password": password.value,
+                }
+                siswa.push(siswaData)
+                localStorage.setItem("localSiswa", JSON.stringify(siswa));
+                $('#exampleModalCenter').modal('show')
+            }
+        })
+    </script>
+</body>
+</html>
